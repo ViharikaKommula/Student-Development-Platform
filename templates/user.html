@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Development Platform</title>
+    <style>
+        body{
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: url('https://source.unsplash.com/1600x900/?technology,code') center/cover no-repeat fixed;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1{
+            color:#333
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+            text-align: center;
+            backdrop-filter: blur(10px); /* Apply a slight blur effect for better integration with the background */
+        }
+
+        #greeting {
+            margin-bottom: 20px;
+        }
+
+        #buttonContainer {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .form {
+            display: none;
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #007bff;
+        }
+
+        button[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .additional-features {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .additional-features p {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #forgotPassword {
+            background-color: #ccc;
+            color: #333;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #forgotPassword:hover {
+            background-color: #ddd;
+        }
+        img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block; /* Ensures the image is a block element */
+    margin: 0 auto; /* Centers the image horizontally within its container */
+    max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+    height: auto; /* Allows the image to scale proportionally */
+    border-radius: 50%; /* Adds a rounded border to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle box shadow for depth */
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}
+    </style>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" height="175px" width="175px">
+    <div class="container">
+        <div id="greeting">
+            <h1>Welcome to Student Development Platform!</h1>
+        </div>
+        <div id="buttonContainer">
+            <button id="registerToggle">Sign Up</button>
+            <button id="loginToggle">Log In</button>
+        </div>
+        <form id="registerForm" class="form">
+            <label for="newUsername">Create Username:</label>
+            <input type="text" id="newUsername" placeholder="Choose a username" required>
+            <label for="newPassword">Create Password:</label>
+            <input type="password" id="newPassword" placeholder="Choose a password" required>
+            <button type="button">Sign Up</button>
+        </form>
+        <form id="loginForm" class="form">
+            <label for="existingUsername">Username:</label>
+            <input type="text" id="existingUsername" placeholder="Enter your username" required>
+            <label for="existingPassword">Password:</label>
+            <input type="password" id="existingPassword" placeholder="Enter your password" required>
+            <button type="button">Log In</button>
+        </form>
+        <p id="message"></p>
+        <div class="additional-features">
+            <button id="forgotPassword">Forgot Password?</button>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const greetingElement = document.getElementById('greeting');
+            const buttonContainer = document.getElementById('buttonContainer');
+            const registerForm = document.getElementById('registerForm');
+            const loginForm = document.getElementById('loginForm');
+            const messageElement = document.getElementById('message');
+            const forgotPasswordButton = document.getElementById('forgotPassword');
+
+            document.getElementById('registerToggle').addEventListener('click', () => toggleForm('registerForm'));
+            document.getElementById('loginToggle').addEventListener('click', () => toggleForm('loginForm'));
+            forgotPasswordButton.addEventListener('click', openForgotPasswordModal);
+
+            let users = []; // In-memory storage for registered users
+
+            function toggleForm(formId) {
+                const forms = [registerForm, loginForm];
+                forms.forEach(form => form.style.display = form.id === formId ? 'block' : 'none');
+                clearMessage();
+            }
+
+            function openForgotPasswordModal() {
+                const username = prompt('Enter your username to reset the password:');
+                if (username !== null && username.trim() !== '') {
+                    showMessage("Password reset instructions sent to ${username}", false);
+                }
+            }
+
+            function clearMessage() {
+                messageElement.innerText = '';
+                messageElement.classList.remove('error');
+            }
+
+            function showMessage(message, isError) {
+                messageElement.innerText = message;
+                messageElement.className = isError ? 'error' : '';
+            }
+
+            document.getElementById('registerForm').querySelector('button').addEventListener('click', register);
+            document.getElementById('loginForm').querySelector('button').addEventListener('click', login);
+
+            function register() {
+                const newUsername = document.getElementById('newUsername').value;
+                const newPassword = document.getElementById('newPassword').value;
+
+                if (!validateInput(newUsername, newPassword)) {
+                    return;
+                }
+
+                if (userExists(newUsername)) {
+                    showMessage('Username already exists', true);
+                    return;
+                }
+
+                // Store user information in memory (for demonstration purposes)
+                users.push({ username: newUsername, password: newPassword });
+                showMessage('Registration successful', false);
+                clearRegistrationForm();
+            }
+
+            function clearRegistrationForm() {
+                document.getElementById('newUsername').value = '';
+                document.getElementById('newPassword').value = '';
+            }
+
+            function userExists(username) {
+                return users.some(user => user.username === username);
+            }
+
+            function login() {
+                const existingUsername = document.getElementById('existingUsername').value;
+                const existingPassword = document.getElementById('existingPassword').value;
+
+                if (!validateInput(existingUsername, existingPassword)) {
+                    return;
+                }
+
+                const user = users.find(user => user.username === existingUsername && user.password === existingPassword);
+
+                if (user) {
+                    showMessage('Login successful', false);
+                } else {
+                    showMessage('Invalid username or password', true);
+                }
+            }
+
+            function validateInput(username, password) {
+                if (username.trim() === '' || password.trim() === '') {
+                    showMessage('Please enter both username and password.', true);
+                    return false;
+                }
+                return true;
+            }
+        });
+    </script>
+</body>
+</html>

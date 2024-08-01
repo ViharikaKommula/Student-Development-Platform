@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI/tZ1iUIG6eB97ZY9qI2Xkw2L4lYT+yoY+Uk7g=" crossorigin="anonymous"></script>
+  <script src="{{ url_for('static', filename='scripts/script.js') }}" defer></script>
+  <title>Student Development Platform</title>
+</head>
+
+<body>
+  <header>
+    <h1>Student Development Platform</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#mental-health">Mental Health</a></li>
+      <li><a href="#interests">Interests</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+      <li><a href="#summary">Personalized Summary</a></li>
+      <li><a href="#feedback">Feedback</a></li>
+      <li><a href="in.html">Login</a> | <a href="in.html">Register</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="container">
+    <h2>Welcome to the Student Development Platform</h2>
+    <p>This platform aims to support students in their holistic development.</p>
+  </section>
+
+  <section id="academics" class="container">
+    <h2>Academic Tracking</h2>
+    <form id="academicForm">
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" required>
+      <label for="grade">Grade:</label>
+      <input type="text" id="grade" name="grade" required>
+      <button type="button" id="trackAcademicBtn">Track Academic</button>
+    </form>
+    <div id="academicResults"></div>
+  </section>
+
+  <section id="mental-health" class="container">
+    <h2>Mental Health Support</h2>
+    <form id="mentalHealthForm">
+      <label for="emotion">Current Emotion:</label>
+      <input type="text" id="emotion" name="emotion" required>
+      <label for="activity">Current Activity:</label>
+      <input type="text" id="activity" name="activity" required>
+      <button type="button" id="supportMentalHealthBtn">Support Mental Health</button>
+    </form>
+    <div id="mentalHealthResults"></div>
+  </section>
+
+  <section id="interests" class="container">
+    <h2>Interests and Passion Exploration</h2>
+    <form id="interestsForm">
+      <label for="interest">Interest:</label>
+      <input type="text" id="interest" name="interest" required>
+      <button type="button" id="exploreInterestsBtn">Explore Interests</button>
+    </form>
+    <div id="interestsResults"></div>
+  </section>
+
+  <section id="recommendations" class="container">
+    <h2>Personalized Recommendations</h2>
+    <form id="recommendationForm">
+      <label for="academic_performance">Academic Performance:</label>
+      <input type="text" id="academic_performance" name="academic_performance" required>
+      <label for="mental_health">Mental Health:</label>
+      <input type="text" id="mental_health" name="mental_health" required>
+      <label for="interestRecommendation">Interest:</label>
+      <input type="text" id="interestRecommendation" name="interest" required>
+      <button type="button" id="getRecommendationBtn">Get Recommendation</button>
+    </form>
+    <div id="recommendationResults"></div>
+  </section>
+
+  <section id="summary" class="container">
+    <h2>Personalized Summary</h2>
+    <button type="button" id="getSummaryBtn">Get Summary</button>
+    <div id="summaryResults"></div>
+  </section>
+
+  <section id="feedback" class="container">
+    <h2>Feedback Form</h2>
+    <form id="feedbackForm">
+      <label for="feedbackText">Your Feedback:</label>
+      <textarea id="feedbackText" name="feedbackText" rows="4" required></textarea>
+      <button type="button" id="submitFeedbackBtn">Submit Feedback</button>
+    </form>
+    <div id="feedbackResults"></div>
+  </section>
+</body>
+
+</html>

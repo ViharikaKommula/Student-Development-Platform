@@ -1,0 +1,101 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('https://source.unsplash.com/1600x900/?technology,code') center/cover no-repeat fixed;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column; /* Set the flex direction to column */
+}
+
+nav {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-left: 150px;
+    margin-bottom: 250px; /* Adjust the margin as needed */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px; /* Adjust the height as needed */
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 15px 20px;
+    color: #333;
+    border-radius: 115px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #eee;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+#home {
+    margin-bottom: 200px; /* Corrected the margin-bottom value */
+}
+
+#home h2 {
+    color: #000000;
+    max-width: 500px;
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto; /* Center horizontally using auto margin */
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+#home p {
+    color: #000000;
+}
+
+img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block; /* Ensures the image is a block element */
+    margin: 0 auto; /* Centers the image horizontally within its container */
+    max-width: 100%; /* Ensures the image doesn't exceed its container's width */
+    height: auto; /* Allows the image to scale proportionally */
+    border-radius: 50%; /* Adds a rounded border to the image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle box shadow for depth */
+    transition: transform 0.3s ease-in-out;
+}
+
+img:hover {
+    transform: scale(1.1);
+}

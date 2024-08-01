@@ -1,0 +1,255 @@
+/* Academics Page */
+@import url('home.css');
+#academics {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 325px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+    label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    /* Style for the trackAcademicBtn button */
+    #trackAcademicBtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #trackAcademicBtn:hover {
+        background-color: #45a049;
+    }
+}
+
+#academics h2 {
+    color: #fff;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#mentalhealth {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 325px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+
+    /* Style for the trackAcademicBtn button */
+    #supportMentalHealthBtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #supportMentalHealthBtn:hover {
+        background-color: #45a049;
+    }
+}
+
+#mentalhealth h2 {
+    color: #fff;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#interests {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 325px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+
+    /* Style for the trackAcademicBtn button */
+    #exploreInterestsBtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        margin-bottom: 40px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #exploreInterestsBtn:hover {
+        background-color: #45a049;
+    }
+}
+
+#interests h2 {
+    color: #fff;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#recommendations {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 325px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+
+    /* Style for the trackAcademicBtn button */
+    #getRecommendationBtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        margin-bottom: 40px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #getRecommendationBtn:hover {
+        background-color: #45a049;
+    }
+}
+
+#recommendations h2 {
+    color: #fff;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Summary Page */
+#summary {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 325px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+
+    /* Style for the trackAcademicBtn button */
+    #getSummaryBtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        margin-bottom: 40px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #getSummaryBtn:hover {
+        background-color: #45a049;
+    }
+}
+
+#summary h2 {
+    color: #fff;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+/* Feedback Page */
+#feedback {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 325px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    flex-direction: column;
+
+    /* Style for the trackAcademicBtn button */
+    #submitFeedbackBtn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        margin-bottom: 40px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    #submitFeedbackBtn:hover {
+        background-color: #45a049;
+    }
+}
+
+#feedback h2 {
+    color: #fff;
+    max-width: 400px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+}
+input {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}

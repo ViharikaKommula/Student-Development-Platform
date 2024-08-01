@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI/tZ1iUIG6eB97ZY9qI2Xkw2L4lYT+yoY+Uk7g=" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='scripts/script.js') }}" defer></script>
+</head>
+<body>
+  <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" height="175px" width="175px">
+    <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Home</a></li>
+          <li><a href="{{ url_for('academics') }}">Academics</a></li>
+          <li><a href="{{ url_for('interests') }}">Interests</a></li>
+          <li><a href="{{ url_for('recommendations') }}">Recommendations</a></li>
+          <li><a href="{{ url_for('summary') }}">Personalized Summary</a></li>
+          <li><a href="{{ url_for('feedback') }}">Feedback</a></li>
+          <li><a href="{{ url_for('user') }}">Register</a> | <a href="{{ url_for('user') }}">Login</a></li>
+        </ul>
+      </nav>
+
+      <section id="mentalhealth" class="container">
+        <h2>Mental Health Support</h2>
+        <form id="mentalHealthForm">
+          <label for="emotion">Current Emotion:</label>
+          <input type="text" id="emotion" name="emotion" required>
+          <label for="activity">Current Activity:</label>
+          <input type="text" id="activity" name="activity" required>
+          <button type="button" id="supportMentalHealthBtn">Support Mental Health</button>
+        </form>
+        <div id="mentalHealthResults"></div>
+      </section>
+</body>
+</html>
